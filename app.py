@@ -7,9 +7,7 @@ import os
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 
-# .env の読み込み（APIキー取得）
-load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # LLM インスタンスの作成
 chat = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7, api_key=openai_api_key)
